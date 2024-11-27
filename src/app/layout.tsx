@@ -1,3 +1,5 @@
+import "../../styles/globals.css"; 
+
 export default function RootLayout({
   children,
 }: {
@@ -5,9 +7,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>User Management App</title>
+        <meta
+          name="description"
+          content="Next.js application with TypeScript and Tailwind CSS for user management."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         suppressHydrationWarning={true}
-        className="flex flex-col min-h-screen bg-background text-foreground"
+        className="flex flex-col min-h-screen bg-gray-100 text-gray-900"
       >
         {children}
       </body>

@@ -1,24 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
+  reactStrictMode: true, // Ensures React's strict mode is enabled.
   compiler: {
-    styledComponents: true,
+    styledComponents: true, // If using styled-components, enables its support.
   },
   env: {
-    PORT: 3000,
+    PORT: "3000", // Environment variable for port.
   },
   serverRuntimeConfig: {
-    port: 3000,
+    port: 3000, // Server-specific config.
   },
   publicRuntimeConfig: {
-    port: 3000,
-  },
-  experimental: {
-    appDir: true,
+    port: 3000, // Public runtime-specific config.
   },
   webpack: (config) => {
-    config.resolve.fallback = { fs: false, net: false, tls: false };
+    config.resolve.fallback = {
+      fs: false,
+      net: false,
+      tls: false,
+    }; // Prevents webpack errors for Node.js built-ins.
     return config;
   },
 };

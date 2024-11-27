@@ -13,7 +13,7 @@
     "bootstrap": "^5.3.3",
     "glob": "^11.0.0",
     "inflight": "^1.0.6",
-    "next": "^13.5.7",
+    "next": "^15.0.3",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",

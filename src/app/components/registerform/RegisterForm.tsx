@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Form, Button, Card, Container } from "react-bootstrap";
 import { useRouter } from "next/router";
 
-const Register: React.FC = () => {
+const RegisterForm: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -85,4 +85,4 @@ const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default RegisterForm;

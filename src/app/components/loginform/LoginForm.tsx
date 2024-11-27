@@ -5,7 +5,7 @@ import { Form, Button, Card, Container } from "react-bootstrap";
 import toast from "react-hot-toast";
 // import { API_URL } from "../../utils/config"; // Use your config for API_URL
 
-const Login: React.FC = () => {
+const LoginForm: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -101,4 +101,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default LoginForm;

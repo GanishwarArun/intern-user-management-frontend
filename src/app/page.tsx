@@ -1,25 +1,73 @@
-import React from "react";
+// src/app/page.tsx
 
-export default function Home() {
+"use client"; // Add this line to mark the component as a client component
+
+import React, { useState } from "react";
+import LoginForm from "../app/components/loginform/LoginForm"; // Ensure the path is correct
+import RegisterForm from "../app/components/registerform/RegisterForm"; // Ensure the path is correct
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+// export default function Home() {
+
+const Home: React.FC = () => {
+  const [isRegistering, setIsRegistering] = useState(false);
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6">Welcome to the Home Page</h1>
-      <p className="text-lg mb-4">
+      <h1 className="text-4xl font-bold mb-6 text-center text-primary">
+        Welcome to the Home Page
+      </h1>
+      <p className="text-lg mb-4 text-center text-gray-700">
         This is a Next.js application with TypeScript and Tailwind CSS.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="p-4 border rounded-lg">
-          <h2 className="text-2xl font-semibold mb-2">Feature 1</h2>
-          <p>Description of feature 1</p>
-        </div>
-        <div className="p-4 border rounded-lg">
-          <h2 className="text-2xl font-semibold mb-2">Feature 2</h2>
-          <p>Description of feature 2</p>
-        </div>
+
+      {isRegistering ? <RegisterForm /> : <LoginForm />}
+
+      <div className="text-center mt-4">
+        <button
+          onClick={() => setIsRegistering(!isRegistering)}
+          className="text-blue-500 hover:underline"
+        >
+          {isRegistering
+            ? "Already have an account? Log in"
+            : "Don't have an account? Register"}
+        </button>
       </div>
     </div>
   );
-}
+};
+
+// import React from "react";
+
+// export default function Home() {
+//   return (
+//     <main className="flex-1 container mx-auto px-4 py-8">
+//       <h1 className="text-4xl font-bold mb-6 text-center text-primary">
+//         Welcome to the Home Page
+//       </h1>
+//       <p className="text-lg mb-4 text-center text-gray-700">
+//         This is a Next.js application with TypeScript and Tailwind CSS.
+//       </p>
+//       <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+//         <div className="p-4 border rounded-lg shadow-lg bg-white">
+//           <h2 className="text-2xl font-semibold mb-2">Feature 1</h2>
+//           <p className="text-gray-700">
+//             Description of feature 1 goes here. This section can describe the
+//             functionality of your app.
+//           </p>
+//         </div>
+//         <div className="p-4 border rounded-lg shadow-lg bg-white">
+//           <h2 className="text-2xl font-semibold mb-2">Feature 2</h2>
+//           <p className="text-gray-700">
+//             Description of feature 2 goes here. Highlight another important
+//             aspect of your application.
+//           </p>
+//         </div>
+//       </section>
+//     </main>
+//   );
+// }
 
 // import Image from "next/image";
 
